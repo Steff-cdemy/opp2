@@ -11,11 +11,19 @@ enum MeasurementSystem {
 }
 
 class Triangle {
-  double heightInMm;
-  double widthInMm;
+  double _heightInMm;
+  double _widthInMm;
   MeasurementSystem measurementSystem;
 
+  double get heightInMm {
+    return _heightInMm;
+  }
+
+  double get widthInMm {
+    return _widthInMm;
+  }
+
   Triangle(double height, double width, this.measurementSystem)
-    : heightInMm = height * measurementSystem.toMm,
-      widthInMm = width * measurementSystem.toMm;
+    : _heightInMm = height * measurementSystem.toMm,
+      _widthInMm = width * measurementSystem.toMm;
 }
