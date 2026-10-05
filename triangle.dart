@@ -3,7 +3,7 @@ enum MeasurementSystem {
   cm(10),
   dm(100),
   m(1000),
-  inch(24.4),
+  inch(25.4),
   feet(304.8);
 
   final double toMm;
@@ -11,19 +11,13 @@ enum MeasurementSystem {
 }
 
 class Triangle {
-  double _heightInMm;
-  double _widthInMm;
-  MeasurementSystem measurementSystem;
+  final double _heightInMm;
+  final double _widthInMm;
 
-  double get heightInMm {
-    return _heightInMm;
-  }
+  Triangle(double height, double width, MeasurementSystem system)
+    : _heightInMm = height * system.toMm,
+      _widthInMm = width * system.toMm;
 
-  double get widthInMm {
-    return _widthInMm;
-  }
-
-  Triangle(double height, double width, this.measurementSystem)
-    : _heightInMm = height * measurementSystem.toMm,
-      _widthInMm = width * measurementSystem.toMm;
+  double height(MeasurementSystem system) => _heightInMm / system.toMm;
+  double width(MeasurementSystem system) => _widthInMm / system.toMm;
 }

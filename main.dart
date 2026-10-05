@@ -8,10 +8,10 @@ void main() {
   final t5 = Triangle(2, 3, MeasurementSystem.inch);
   final t6 = Triangle(2, 3, MeasurementSystem.feet);
 
-  print(t1.widthInMm);
-  print(t2.widthInMm);
-  print(t3.widthInMm);
-  print(t4.widthInMm);
-  print(t5.widthInMm);
-  print(t6.widthInMm);
+  print(t1.width(MeasurementSystem.mm));
+  print(t2.width(MeasurementSystem.mm));
+  print(t3.width(MeasurementSystem.mm));
+  print(t4.width(MeasurementSystem.mm));
+  print(t5.width(MeasurementSystem.mm));
+  print(t6.width(MeasurementSystem.mm));
 }
